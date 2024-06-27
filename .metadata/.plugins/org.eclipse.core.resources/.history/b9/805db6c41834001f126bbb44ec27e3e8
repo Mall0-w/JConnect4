@@ -1,9 +1,0 @@
-package game;
-
-public class Piece {
-	private Player p;
-	
-	public Piece(Player p) {
-		this.p = p;
-	}
-}

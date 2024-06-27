@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+C:\Users\kylel\OneDrive\Desktop\Side Projects\JConnect4\.metadata\.plugins\org.eclipse.jdt.core
-661819235.index
-3413270776.index
-1865797976.index
