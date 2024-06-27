@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+package game;
+
+import java.util.Scanner;
+
+/**
+ * 
+ */
+public class Game {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Test");
+		Board b = new Board();
+		Player player = new Player("John", b, Colour.RED);
+		
+		System.out.println(player);
+		Scanner in = new Scanner(System.in);
+		String input;
+		int col;
+		while(!b.hasConnectFour()) {
+			System.out.println(b);
+			do{
+				input = in.nextLine();
+				col = Integer.parseInt(input);
+			}while(!player.placePiece(col));
+		in.close();
+		}
+	}
+}

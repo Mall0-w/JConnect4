@@ -1,0 +1,21 @@
+/**
+ * 
+ */
+package game;
+
+/**
+ * 
+ */
+public class Game {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.print("Test");
+		Board b = new Board();
+		Player p = new Player("John", b, Colour.RED);
+	}
+
+}

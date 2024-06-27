@@ -1,0 +1,20 @@
+package game;
+
+enum colour {
+	RED,
+	BLUE
+}
+
+public class Player {
+	private colour c;
+	private String name;
+	private Board b;
+	
+	public Player(String name, Board b, colour c) {
+		this.name = name;
+		this.b = b;
+		this.c = c;
+	}
+	
+	
+}

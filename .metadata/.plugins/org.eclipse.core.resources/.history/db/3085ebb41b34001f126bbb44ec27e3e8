@@ -1,0 +1,39 @@
+package game;
+
+public class Piece {
+	private Player player;
+	private Piece [] neighbours = new Piece[7];
+	//neighbours correspond to the 8 squares surrounding a piece
+	// [ 0, 1, 2]
+	// [ 3, _, 4]
+	// [ 5, 6, 7]
+	private int connectCount = 1;
+	
+	public Piece(Player p) {
+		this.player = p;
+	}
+	
+	public String toString() {
+		return Character.toString(this.player.toString().charAt(0));
+	}
+	
+	public void setNeighbours(Piece[] n) {
+		if(n.length != 7) {
+			throw new IllegalArgumentException("neighbours must be an array of length 7");
+		}
+		this.neighbours = n;
+		for(Piece p : this.neighbours) {
+			if(p != null && p.player == this.player) {
+				this.connectCount = Math.max(this.connectCount, p.connectCount + 1);
+			}
+		}
+	}
+	
+	public boolean hasConnect4() {
+		return this.connectCount >= 4;
+	}
+	
+	public Piece[] getNeighbours(){
+		return this.neighbours;
+	}
+}

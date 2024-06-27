@@ -1,0 +1,19 @@
+package game;
+
+public class Piece {
+	private Player p;
+	private Piece [][] neighbours;
+	private int connectCount = 0;
+	
+	public Piece(Player p) {
+		this.p = p;
+	}
+	
+	public void setNeighbours(Piece[][] n) {
+		this.neighbours = n;
+	}
+	
+	public Piece[][] getNeighbours(){
+		return this.neighbours;
+	}
+}
