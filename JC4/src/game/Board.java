@@ -59,6 +59,16 @@ public class Board {
 		return false;
 	}
 	
+	public boolean isFilled() {
+		for(int j = 0; j < this.getHeight(); j++) {
+			for(int i = 0; i < this.getWidth(); i++) {
+				if(this.board[i][j] == null)
+					return false;
+			}
+		}
+		return true;
+	}
+	
 	public boolean hasConnectFour() {
 		return winner != null;
 	}
@@ -69,6 +79,7 @@ public class Board {
 	
 	public String toString() {
 		StringBuilder finished = new StringBuilder();
+		
 		for(Piece[] row : board) {
 			for(Piece p : row) {
 				if(p == null) finished.append("_ ");
@@ -76,6 +87,10 @@ public class Board {
 			}
 			finished.append("\n");
 		}
+		for(int i = 0; i < this.getWidth(); i++) {
+			finished.append(i + " ");
+		}
+		finished.append("\n");
 		//remove the last character to get rid of the final newline (board cannot be size 0 so don't have to worry about errors)
 		finished.deleteCharAt(finished.length() - 1);
 		return finished.toString();

@@ -36,7 +36,7 @@ public class Game {
 			int col = -1;
 			int turn = 0;
 			boolean intError;
-			while(!b.hasConnectFour()) {
+			while(!b.hasConnectFour() && !b.isFilled()) {
 				if(turn % 2 == 0)
 					player = p1;
 				else 
@@ -51,7 +51,11 @@ public class Game {
 				}while(intError || !player.placePiece(col));
 			}
 			System.out.println(b);
-			System.out.println(String.format("Player %s Wins!", b.getWinner().toString()));
+			if(b.hasConnectFour()) {
+				System.out.println(String.format("Player %s Wins!", b.getWinner().toString()));
+			}else {
+				System.out.println("Tie!");
+			}
 			System.out.println("Play again? (Y/N)");
 			newGame = (in.nextLine().trim().toUpperCase().equals("Y"));
 		}while(newGame);
